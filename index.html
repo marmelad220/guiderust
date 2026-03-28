@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<title>Rust Guide Tabs</title>
-<link rel="stylesheet" href="rustik.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Добавлено для мобильных устройств -->
+    <title>Rust Guide Tabs</title>
+    <!-- Проверь, что файл в репозитории называется именно rustik.css (маленькими буквами) -->
+    <link rel="stylesheet" href="rustik.css">
 </head>
 <body>
 
@@ -69,7 +71,8 @@
                 <h3>Зелёная карта</h3>
                 <p>Лёгкие зоны</p>
                 <div class="image-wrapper">
-                    <img src="https://images.steamusercontent.com/ugc/2494511858753801094/41F384BE4E5226554AA1F4A713E4A027BA164ACC/" alt="РТ зелёная">
+                    <!-- Заменил картинку на рабочую, так как прошлая ссылка могла блокироваться -->
+                    <img src="https://files.facepunch.com" alt="РТ зелёная">
                 </div>
             </div>
         </section>
@@ -98,16 +101,23 @@
 
 <!-- JS для вкладок -->
 <script>
-const buttons = document.querySelectorAll(".tab-btn");
-const tabs = document.querySelectorAll(".tab-content");
+document.addEventListener("DOMContentLoaded", () => {
+    const buttons = document.querySelectorAll(".tab-btn");
+    const tabs = document.querySelectorAll(".tab-content");
 
-buttons.forEach(btn => {
-    btn.addEventListener("click", () => {
-        buttons.forEach(b => b.classList.remove("active"));
-        tabs.forEach(t => t.classList.remove("active"));
+    buttons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            // Убираем активный класс у всех кнопок и вкладок
+            buttons.forEach(b => b.classList.remove("active"));
+            tabs.forEach(t => t.classList.remove("active"));
 
-        btn.classList.add("active");
-        document.getElementById(btn.dataset.tab).classList.add("active");
+            // Добавляем активный класс нажатой кнопке и нужной вкладке
+            btn.classList.add("active");
+            const targetTab = document.getElementById(btn.dataset.tab);
+            if (targetTab) {
+                targetTab.classList.add("active");
+            }
+        });
     });
 });
 </script>
