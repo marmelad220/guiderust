@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Rust Guide Tabs</title>
+<link rel="stylesheet" href="rustik.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Сайдбар / вкладки -->
+    <aside class="sidebar">
+        <h2>RUST GUIDE</h2>
+        <button class="tab-btn active" data-tab="start">Начало</button>
+        <button class="tab-btn" data-tab="workbench">Верстак</button>
+        <button class="tab-btn" data-tab="rt">РТ</button>
+        <button class="tab-btn" data-tab="weapons">Оружие</button>
+    </aside>
+
+    <!-- Основной контент -->
+    <main class="content">
+
+        <!-- Вкладка Начало -->
+        <section id="start" class="tab-content active">
+            <h1>🪓 Начало игры</h1>
+            <p>Ты появляешься с камнем и факелом. Твоя задача — выжить.</p>
+            <ul>
+                <li>Собери дерево и камень</li>
+                <li>Сделай инструменты</li>
+                <li>Поставь спальник</li>
+                <li>Найди безопасное место</li>
+            </ul>
+            <div class="image-wrapper">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Rust_cover_art.jpg" alt="Начало игры">
+            </div>
+        </section>
+
+        <!-- Вкладка Верстак -->
+        <section id="workbench" class="tab-content">
+            <h1>🔧 Верстак</h1>
+            <div class="card">
+                <h3>Tier 1</h3>
+                <p>Базовые рецепты</p>
+                <ul>
+                    <li>Лук</li>
+                    <li>Револьвер</li>
+                </ul>
+                <div class="image-wrapper">
+                    <img src="https://static.wikia.nocookie.net/rust_gamepedia/images/1/13/Workbench.png" alt="Верстак 1">
+                </div>
+            </div>
+            <div class="card">
+                <h3>Tier 2</h3>
+                <ul>
+                    <li>Полуавтомат</li>
+                    <li>Дробовик</li>
+                </ul>
+                <div class="image-wrapper">
+                    <img src="https://static.wikia.nocookie.net/rust_gamepedia/images/7/7b/Workbench_level2.png" alt="Верстак 2">
+                </div>
+            </div>
+        </section>
+
+        <!-- Вкладка РТ -->
+        <section id="rt" class="tab-content">
+            <h1>🏭 РТ (радтаун)</h1>
+            <div class="card">
+                <h3>Зелёная карта</h3>
+                <p>Лёгкие зоны</p>
+                <div class="image-wrapper">
+                    <img src="https://images.steamusercontent.com/ugc/2494511858753801094/41F384BE4E5226554AA1F4A713E4A027BA164ACC/" alt="РТ зелёная">
+                </div>
+            </div>
+        </section>
+
+        <!-- Вкладка Оружие -->
+        <section id="weapons" class="tab-content">
+            <h1>🔫 Оружие</h1>
+            <div class="card">
+                <h3>🏹 Лук</h3>
+                <p>Урон: низкий, крафт: дерево + ткань</p>
+                <div class="image-wrapper">
+                    <img src="https://static.wikia.nocookie.net/rust_gamepedia/images/5/53/Bow.png" alt="Лук">
+                </div>
+            </div>
+            <div class="card">
+                <h3>🔫 Револьвер</h3>
+                <p>Урон: средний, крафт: металл + пружина</p>
+                <div class="image-wrapper">
+                    <img src="https://static.wikia.nocookie.net/rust_gamepedia/images/3/3c/Revolver.png" alt="Револьвер">
+                </div>
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<!-- JS для вкладок -->
+<script>
+const buttons = document.querySelectorAll(".tab-btn");
+const tabs = document.querySelectorAll(".tab-content");
+
+buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+        buttons.forEach(b => b.classList.remove("active"));
+        tabs.forEach(t => t.classList.remove("active"));
+
+        btn.classList.add("active");
+        document.getElementById(btn.dataset.tab).classList.add("active");
+    });
+});
+</script>
+
+</body>
+</html>

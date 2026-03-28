@@ -1,0 +1,143 @@
+/* ОСНОВА */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #0f0f0f;
+    color: #e5e5e5;
+}
+
+/* ЛЕЙАУТ */
+.container {
+    display: flex;
+}
+
+/* САЙДБАР */
+.sidebar {
+    width: 260px;
+    height: 100vh;
+    background: #171717;
+    border-right: 1px solid #2a2a2a;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h2 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.sidebar .tab-btn {
+    background: none;
+    border: none;
+    color: #bdbdbd;
+    text-align: left;
+    padding: 10px 12px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.sidebar .tab-btn:hover,
+.sidebar .tab-btn.active {
+    background: #2a2a2a;
+    color: white;
+}
+
+/* КОНТЕНТ */
+.content {
+    margin-left: 260px;
+    padding: 40px;
+    width: 100%;
+}
+
+/* СЕКЦИИ */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* ЗАГОЛОВКИ */
+h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #d4d4d4;
+}
+
+/* КАРТОЧКИ */
+.card {
+    background: #171717;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px 0;
+    transition: 0.2s;
+}
+
+.card:hover {
+    border-color: #3a3a3a;
+    transform: translateY(-2px);
+}
+
+/* СПИСКИ */
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin: 8px 0;
+}
+
+/* КАРТИНКИ */
+.image-wrapper {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.image-wrapper img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid #2a2a2a;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.image-wrapper img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 15px rgba(34,197,94,0.3);
+}
+
+/* АДАПТИВ */
+@media (max-width: 800px) {
+    .container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        overflow-x: auto;
+    }
+    .sidebar .tab-btn {
+        flex: 1;
+        margin-right: 5px;
+        margin-bottom: 0;
+    }
+    .content {
+        margin-left: 0;
+        padding: 20px;
+    }
+}
